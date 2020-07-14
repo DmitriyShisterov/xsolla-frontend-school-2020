@@ -13,24 +13,9 @@ function eventListing(params) {
     });
 
     //let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json';
-    const response = fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json', {
-        mode: 'no-cors',
-        credentials: 'same-origin', // include, *same-origin, omit
-        headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *client
-        //body: JSON.stringify(data)
-    })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log('Request successful', data);
-        })
-    console.log(response);
+    let response = await fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json');
+    let blob = await response.blob()
+    console.log(blob);
 }
 eventListing();
 
