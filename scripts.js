@@ -15,10 +15,10 @@ function eventListing(params) {
     //let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json';
     fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json', { mode: 'no-cors' })
         .then(function (response) {
-            return response.text();
+            return response.json();
         })
-        .then(function (text) {
-            console.log('Request successful', text);
+        .then(function (data) {
+            console.log('Request successful', data);
         })
         .catch(function (error) {
             log('Request failed', error)
