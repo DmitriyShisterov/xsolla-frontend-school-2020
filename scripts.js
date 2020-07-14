@@ -14,7 +14,8 @@ function eventListing(params) {
 
     var requestOptions = {
         method: 'GET',
-        redirect: 'follow'
+        redirect: 'follow',
+        mode: 'no-cors'
     };
 
     fetch("https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/raw/master/src/events.json", requestOptions)
