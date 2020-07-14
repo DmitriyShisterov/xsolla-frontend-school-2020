@@ -12,29 +12,15 @@ function eventListing(params) {
         })
     });
 
-    let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/raw/master/src/events.json';
-    let data = {};
-    fetch(url, {
-        method: "POST",
-        mode: 'no-cors',
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        },
-        credentials: "same-origin"
-    }).then(function (response) {
-        response.status     //=> number 100–599
-        response.statusText //=> String
-        response.headers    //=> Headers
-        response.url        //=> String
-        console.log(response);
-        return response.text()
-    }, function (error) {
-        error.message //=> String
-    })
-        .then(data => {
-            console.log(data) // Prints result from `response.json()`
-        })
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+
+    fetch("https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/raw/master/src/events.json", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
 
 }
 eventListing();
