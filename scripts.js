@@ -16,7 +16,7 @@ function eventListing(params) {
 
     let blob;
     async function f() {
-        let response = await fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json');
+        let response = await fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json', { mode: 'no-cors' });
         blob = await response.blob()
     }
 
