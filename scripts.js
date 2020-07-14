@@ -20,10 +20,6 @@ function eventListing(params) {
         .then(function (data) {
             console.log('Request successful', data);
         })
-        .catch(function (error) {
-            log('Request failed', error)
-        });
-
 }
 eventListing();
 
