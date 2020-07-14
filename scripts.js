@@ -13,23 +13,12 @@ function eventListing(params) {
     });
 
     let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json';
-    fetch(url, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        },
-        credentials: "same-origin"
-    }).then(function (response) {
-        response.status     //=> number 100–599
-        response.statusText //=> String
-        response.headers    //=> Headers
-        response.url        //=> String
-
-        return response.text()
-    }, function (error) {
-        error.message //=> String
-    })
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data) // Prints result from `response.json()` in getRequest
+        })
+        .catch(error => console.error(error))
 
 
 }
