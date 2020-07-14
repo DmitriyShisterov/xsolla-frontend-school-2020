@@ -11,9 +11,9 @@ function eventListing(params) {
             }
         })
     });
-    let zz;
-    //let url = 'https://github.com/xsolla/xsolla-frontend-school-2020.git';
-    fetch('events.json')
+
+    let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json';
+    fetch(url, { mode: "no-cors" })
         .then(function (response) {
             if (!response.ok) {
                 throw new Error("HTTP error, status = " + response.status);
