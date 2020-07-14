@@ -27,7 +27,7 @@ function eventListing(params) {
         response.statusText //=> String
         response.headers    //=> Headers
         response.url        //=> String
-        console.log(response.json());
+        console.log(response);
         return response.text()
     }, function (error) {
         error.message //=> String
