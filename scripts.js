@@ -16,6 +16,7 @@ function eventListing(params) {
     let data = {};
     fetch(url, {
         method: "POST",
+        mode: 'no-cors',
         body: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json"
