@@ -16,6 +16,15 @@ function eventListing(params) {
     let response = await fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json');
     let blob = await response.blob()
     console.log(blob);
+
+    let blob;
+    async function f() {
+        let response = await fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json');
+        blob = await response.blob()
+    }
+
+    f().then(console.log(blob)); // 1
+
 }
 eventListing();
 
