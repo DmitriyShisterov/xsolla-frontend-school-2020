@@ -27,12 +27,11 @@ function eventListing(params) {
         response.statusText //=> String
         response.headers    //=> Headers
         response.url        //=> String
-
         return response.text()
     }, function (error) {
         error.message //=> String
     })
-
+    console.log(response.text());
 }
 eventListing();
 
