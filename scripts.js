@@ -25,11 +25,14 @@ function eventListing(params) {
         //body: JSON.stringify(data)
     })
         .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log('Request successful', data);
-        })
+            return response.text().then(function (text) {
+                return text ? JSON.parse(text) : {}
+            })
+        }
+
+            .then(function (data) {
+                console.log('Request successful', data);
+            })
 }
 eventListing();
 
