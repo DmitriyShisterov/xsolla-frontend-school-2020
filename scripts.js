@@ -12,7 +12,7 @@ function eventListing(params) {
         })
     });
 
-    let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json';
+    let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/raw/master/src/events.json';
     let data = {};
     fetch(url, {
         method: "POST",
