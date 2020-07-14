@@ -22,7 +22,7 @@ function eventListing(params) {
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *client
-        body: JSON.stringify(data)
+        //body: JSON.stringify(data)
     })
         .then(function (response) {
             return response.json();
