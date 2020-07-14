@@ -13,7 +13,7 @@ function eventListing(params) {
     });
 
     //let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json';
-    fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json', {
+    const response = await fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json', {
         mode: 'no-cors',
         credentials: 'same-origin', // include, *same-origin, omit
         headers: {
@@ -25,14 +25,12 @@ function eventListing(params) {
         //body: JSON.stringify(data)
     })
         .then(function (response) {
-            return response.text().then(function (text) {
-                return text ? JSON.parse(text) : {}
-            })
-        }
-
-            .then(function (data) {
-                console.log('Request successful', data);
-            })
+            return response.json();
+        })
+        .then(function (data) {
+            console.log('Request successful', data);
+        })
+    console.log(response);
 }
 eventListing();
 
