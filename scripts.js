@@ -13,7 +13,7 @@ function eventListing(params) {
     });
 
     //let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json';
-    const response = await fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json', {
+    const response = fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json', {
         mode: 'no-cors',
         credentials: 'same-origin', // include, *same-origin, omit
         headers: {
