@@ -12,14 +12,17 @@ function eventListing(params) {
         })
     });
 
-    let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json';
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data) // Prints result from `response.json()` in getRequest
+    //let url = 'https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json';
+    fetch('https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/blob/master/src/events.json', { mode: 'cors' })
+        .then(function (response) {
+            return response.text();
         })
-        .catch(error => console.error(error))
-
+        .then(function (text) {
+            console.log('Request successful', text);
+        })
+        .catch(function (error) {
+            log('Request failed', error)
+        });
 
 }
 eventListing();
