@@ -12,29 +12,19 @@ function eventListing(params) {
         })
     });
 
-    /*var requestOptions = {
+    var requestOptions = {
         method: 'GET',
         redirect: 'follow',
-        mode: 'no-cors'
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
     };
-
     fetch("https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/raw/master/src/events.json", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
-*/
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            console.log(this.responseText);
-        }
-    });
-
-    xhr.open("GET", "https://github.com/DmitriyShisterov/xsolla-frontend-school-2020/raw/master/src/events.json");
-
-    xhr.send();
 }
 eventListing();
 
