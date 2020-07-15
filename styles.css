@@ -65,7 +65,7 @@ input:focus, select:focus, fieldset:focus {
     margin-right: 20px;
 }
 /*Grid*/
-.wrapperFlex {
+.eventsWrap {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -78,7 +78,7 @@ input:focus, select:focus, fieldset:focus {
     height: 400px;
     justify-content: space-between !important;
 }
-
+/*
 .one {
     background: url(https://cdn3.xsolla.com/files/uploaded/113250/b1f06edaf618c3e3ad19c159eb5aa036.jpeg);   
 }
@@ -91,8 +91,8 @@ input:focus, select:focus, fieldset:focus {
 }
 .four {
     background: url(https://cdn3.xsolla.com/files/uploaded/113250/0662c0df7663f71831e83be091228413.jpeg);
-}
-.item {
+}*/
+.event {
     background-size: cover;
     border-radius: 6px;
     height: 400px;
@@ -102,10 +102,12 @@ input:focus, select:focus, fieldset:focus {
     flex-direction: column;
     justify-content: space-between;
 }
+
+/*
 .flexTwo {
     margin-top: 40px !important;
 }
- 
+ */
 .date {
     width: 80px;
     height: 80px;
