@@ -69,14 +69,10 @@ function evling(params) {
     }
     let newEvl = [];
     let sortEvl = [];
-    let monthes = [];
-    let cities = [];
     let selects = document.querySelectorAll('select');
     selects.forEach(function (select, i, selects) {
         select.addEventListener('change', function (event) {
             let value = select.value;
-            let month;
-
             if (event.target.className === 'city') {
                 filter.city = select.value;
             } else if (event.target.className === 'month') {
@@ -84,30 +80,22 @@ function evling(params) {
             }
 
             if (filter.city && filter.month) {
+                sortEvl = [];
+                let found = 0;
+                let message = 'Событий не найдено, попробуйте поискать по другим параметрам.'
                 evl.forEach(function (evt, i, evl) {
                     let month;
                     month = evt.date.slice(3, 5)
                     if (evt.city === filter.city && month === filter.month) {
-                        console.log(evt);
+                        sortEvl.push(evt);
+                        found++;
                     }
                 })
-                /*newEvl.forEach(function (nevt, i, newEvl) {
-                    if (event.target.className === 'month') {
-                        month = nevt.date.slice(3, 5)
-                        if (month === value) {// здесь нужно проверять где был клик и фильтровать по нему
-                            sortEvl.push(nevt)
-                            console.log(nevt)
-                        }
-                    }
-                    if (event.target.className === 'city') {
-                        if (nevt.city === value) {
-                            sortEvl.push(nevt)
-                            console.log(nevt)
-                        }
-                    }
-                })*/
-                console.log('test')
-
+                if (found === 0) {
+                    alert(message);
+                }
+                render(sortEvl);
+                console.log(sortEvl);
             } else { //  первый этап
                 newEvl = [];
                 evl.forEach(function (evt, i, evl) {
@@ -119,6 +107,7 @@ function evling(params) {
                         newEvl.push(evt);
                     }
                 })
+                render(newEvl);
                 console.log(newEvl);
             }
         })
