@@ -69,6 +69,8 @@ function evling(params) {
     }
     let newEvl = [];
     let sortEvl = [];
+    let monthes = [];
+    let cities = [];
     let selects = document.querySelectorAll('select');
     selects.forEach(function (select, i, selects) {
         select.addEventListener('change', function (event) {
@@ -82,7 +84,14 @@ function evling(params) {
             }
 
             if (filter.city && filter.month) {
-                newEvl.forEach(function (nevt, i, newEvl) {
+                evl.forEach(function (evt, i, evl) {
+                    let month;
+                    month = evt.date.slice(3, 5)
+                    if (evt.city === filter.city && month === filter.month) {
+                        console.log(evt);
+                    }
+                })
+                /*newEvl.forEach(function (nevt, i, newEvl) {
                     if (event.target.className === 'month') {
                         month = nevt.date.slice(3, 5)
                         if (month === value) {// здесь нужно проверять где был клик и фильтровать по нему
@@ -96,18 +105,22 @@ function evling(params) {
                             console.log(nevt)
                         }
                     }
+                })*/
+                console.log('test')
+
+            } else { //  первый этап
+                newEvl = [];
+                evl.forEach(function (evt, i, evl) {
+                    let month;
+                    if (event.target.className === 'month') {// привели дату к нормальному формату
+                        month = evt.date.slice(3, 5)
+                    }
+                    if (evt.city === value || month === value) {
+                        newEvl.push(evt);
+                    }
                 })
+                console.log(newEvl);
             }
-            evl.forEach(function (evt, i, evl) {
-                if (event.target.className === 'month') {// привели дату к нормальному формату
-                    month = evt.date.slice(3, 5)
-                }
-                if (evt.city === value || month === value) {
-                    newEvl.push
-                }
-            })
-            console.log(newEvl)
-            // console.log(filter);
         })
     })
 };
