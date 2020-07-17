@@ -63,7 +63,6 @@ function evling(params) {
             bk.classList.toggle('checked', false);
         }
     };
-
     let filter = {
         city: undefined,
         month: undefined
@@ -98,21 +97,17 @@ function evling(params) {
                         }
                     }
                 })
-                if (newEvl.length > 0) {
-                    newEvl = [];
-                }
-                render(sortEvl);
             }
             evl.forEach(function (evt, i, evl) {
                 if (event.target.className === 'month') {// привели дату к нормальному формату
                     month = evt.date.slice(3, 5)
                 }
                 if (evt.city === value || month === value) {
-                    newEvl.push(evt)
+                    newEvl.push
                 }
             })
-            console.log(newEvl);
-            render(newEvl);
+            console.log(newEvl)
+            // console.log(filter);
         })
     })
 };
