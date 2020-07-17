@@ -1,17 +1,18 @@
-function eventListing(params) {
-    let eventList = {};
+function evling(params) {
+    let evl = {};
     let requestOptions = {
         method: 'GET',
         redirect: 'follow'
     };
+    let result;
     let url = 'https://dmitriyshisterov.github.io/xsolla-frontend-school-2020/src/events.json';
     fetch(url, requestOptions)
         .then(function (resp) {
             return resp.json();
         })
         .then(function (data) {
-            eventList = data;
-            render(eventList);
+            evl = data;
+            render(evl);
         })
         .catch(function () {
             //error
@@ -19,6 +20,9 @@ function eventListing(params) {
     /*render*/
     function render(x) {
         let eventsWrap = document.querySelector('#eventsWrap');
+        if (eventsWrap.childElementCount != 0) {
+            eventsWrap.innerHTML = '';
+        }
         for (let i = 0; i < x.length; i++) {
             let name = x[i].name;
             let fullDate = x[i].date;
@@ -59,34 +63,59 @@ function eventListing(params) {
             bk.classList.toggle('checked', false);
         }
     };
+
+    let filter = {
+        city: undefined,
+        month: undefined
+    }
+    let newEvl = [];
+    let sortEvl = [];
     let selects = document.querySelectorAll('select');
-    selects.forEach(function (item, i, selects) {
-        item.addEventListener('change', function (event) {
-            if (item.className === 'city') {
-                let city = item.value;
-                let eventsInCity = []
-                eventList.forEach(function (item, i, eventList) {
-                    if (item.city === city) {
-                        eventsInCity.push(item);
-                    }
-                });
-                console.log(eventsInCity);
+    selects.forEach(function (select, i, selects) {
+        select.addEventListener('change', function (event) {
+            let value = select.value;
+            let month;
+
+            if (event.target.className === 'city') {
+                filter.city = select.value;
+            } else if (event.target.className === 'month') {
+                filter.month = select.value;
             }
-            if (item.className === 'month') {
-                let month = item.value;
-                let monthEvents = []
-                eventList.forEach(function (item, i, eventList) {
-                    let numberMonth = item.date.slice(3, 5);
-                    if (numberMonth === month) {
-                        monthEvents.push(item);
+
+            if (filter.city && filter.month) {
+                newEvl.forEach(function (nevt, i, newEvl) {
+                    if (event.target.className === 'month') {
+                        month = nevt.date.slice(3, 5)
+                        if (month === value) {// здесь нужно проверять где был клик и фильтровать по нему
+                            sortEvl.push(nevt)
+                            console.log(nevt)
+                        }
                     }
-                });
-                console.log(monthEvents);
+                    if (event.target.className === 'city') {
+                        if (nevt.city === value) {
+                            sortEvl.push(nevt)
+                            console.log(nevt)
+                        }
+                    }
+                })
+                if (newEvl.length > 0) {
+                    newEvl = [];
+                }
+                render(sortEvl);
             }
+            evl.forEach(function (evt, i, evl) {
+                if (event.target.className === 'month') {// привели дату к нормальному формату
+                    month = evt.date.slice(3, 5)
+                }
+                if (evt.city === value || month === value) {
+                    newEvl.push(evt)
+                }
+            })
+            console.log(newEvl);
+            render(newEvl);
         })
     })
-
-}
-eventListing();
+};
+evling();
 
 
