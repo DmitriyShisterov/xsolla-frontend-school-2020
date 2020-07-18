@@ -80,13 +80,13 @@ input:focus, select:focus, fieldset:focus {
     background-size: cover;
     border-radius: 6px;
     height: 400px;
-    /* width: calc(50% - 20px); */
+    width: calc(50% - 20px); 
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 10px;
-    /* flex: 1; */
+  
     min-width: 600px;
     max-width: 600px;
 }
