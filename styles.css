@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 
 body {
     font-family: Arial;
@@ -16,8 +9,7 @@ body {
 
 .container-large {
     padding: 100px 100px 80px 100px;
-    -webkit-box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.12);
-            box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.12);
     border-radius: 16px;
     width: 100%;
 }
@@ -51,7 +43,7 @@ body {
 }
 select {
     background-color: #fff;
-    background-image: -o-linear-gradient(45deg, transparent 50%, #bdbdbd 50%),-o-linear-gradient(315deg, #bdbdbd 50%, transparent 50%),-o-linear-gradient(left, #bdbdbd00, #bdbdbd00);
+    background-image: -webkit-linear-gradient(45deg, transparent 50%, #bdbdbd 50%),-webkit-linear-gradient(315deg, #bdbdbd 50%, transparent 50%),-webkit-linear-gradient(left, #bdbdbd00, #bdbdbd00);
     background-image: linear-gradient(45deg, transparent 50%, #bdbdbd 50%),linear-gradient(135deg, #bdbdbd 50%, transparent 50%),linear-gradient(to right, #bdbdbd00, #bdbdbd00);
     background-position: calc(100% - 20px) calc(1em + 2px),calc(100% - 15px) calc(1em + 2px),calc(100% - 2.5em) 0.5em;
     background-size: 0px !important;
@@ -65,8 +57,7 @@ input:focus, select:focus, fieldset:focus {
 .inputBox select{
     width: 200px;
     height: 50px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     border-radius: 6px;
     border: 1px solid #444;
     font-size: 24px;
@@ -116,7 +107,7 @@ input:focus, select:focus, fieldset:focus {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin: 10px;
-  
+    /* flex: 1; */
     min-width: 600px;
     max-width: 600px;
 }
@@ -125,8 +116,7 @@ input:focus, select:focus, fieldset:focus {
     width: 80px;
     height: 80px;
     border: 2px solid #FFFFFF;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     border-radius: 6px;
     font-style: normal;
     font-weight: normal;
@@ -159,8 +149,7 @@ input:focus, select:focus, fieldset:focus {
     font-size: 48px;
     line-height: 66px;
     color: #FFFFFF;
-    -o-text-overflow: ellipsis;
-       text-overflow: ellipsis;
+    text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -168,8 +157,7 @@ input:focus, select:focus, fieldset:focus {
 @media (max-width: 480px) {
     .container-large {
         padding: 50px 0px 40px 0px;
-        -webkit-box-shadow: none;
-                box-shadow: none;
+        box-shadow: none;
     }
     .inputBox {
         -webkit-box-align: start;
@@ -228,3 +216,4 @@ input:focus, select:focus, fieldset:focus {
     }
     
   }
+
