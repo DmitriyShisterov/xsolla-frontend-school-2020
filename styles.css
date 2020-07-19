@@ -5,6 +5,9 @@
 * Browsers: last 4 version
 */
 
+*, *::after, *::before {
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial;
@@ -16,6 +19,8 @@ body {
     padding: 100px 100px 80px 100px;
     width: 100%;
     flex-direction: column;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 .h1, h1 {
     font-family: Arial !important;
@@ -31,6 +36,7 @@ body {
     -ms-flex-pack: start;
     justify-content: flex-start;
     margin: 40px 0 40px 10px;
+    width: 50%;
 }
 .inputBox {
     display: -webkit-box;
@@ -39,6 +45,8 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    justify-content: space-around;
+    /* flex: 1; */
 }
 .inputBox > label {
     font-size:24px;
@@ -68,11 +76,11 @@ input:focus, select:focus, fieldset:focus {
     padding: 9px 50px 9px 20px;
     line-height: 33px;
     font-weight: 500;
+    z-index: 5;
     font-family: Arial;
+    background-color: transparent;
 }
-.inputsBoxWrap div:last-child {
-    margin-left: 35px;
-}
+
 .eventsWrap {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -240,3 +248,8 @@ input:focus, select:focus, fieldset:focus {
     }
     
   }
+ 
+  div.inputBox:nth-child(2) {
+    margin-left: 50px;
+}
+

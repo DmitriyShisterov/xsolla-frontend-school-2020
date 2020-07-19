@@ -79,6 +79,8 @@ function evling(params) {
             bk.classList.toggle('checked', false);
         }
     };
+
+
     let filter = {
         city: undefined,
         month: undefined
