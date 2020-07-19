@@ -218,16 +218,21 @@ input:focus, select:focus, fieldset:focus {
     .container-large {
         padding: 100px 40px 80px 40px;
     }
+    .inputBox {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+        flex-direction: column;
+        width: 50%;
+        }
+    .inputBox select {
+        width: 100%;
+        }
     .event {
         margin: 0px 0px 10px 0px;
         background-size: cover;
         border-radius: 6px;
         margin: 10px;
     }
-    .inputBox {
-        -webkit-box-align: start;
-        -ms-flex-align: start;
-        align-items: start;
-        flex-direction: column;
-    }
+    
   }
