@@ -10,7 +10,9 @@ body {
     font-family: Arial;
 }
 .wrapper{
-    margin: 0 auto;width: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 .container-large {
     padding: 100px 100px 80px 100px;
