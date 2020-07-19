@@ -152,9 +152,9 @@ input:focus, select:focus, fieldset:focus {
 
 @media (max-width: 480px) {
     .container-large {
-        padding: 50px 0px 40px 0px;
+        padding: 60px 20px 40px 20px;
         -webkit-box-shadow: none;
-                box-shadow: none;
+        box-shadow: none;
     }
     .inputBox {
         -webkit-box-align: start;
