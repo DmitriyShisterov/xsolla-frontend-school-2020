@@ -196,10 +196,10 @@ input:focus, select:focus, fieldset:focus {
         margin: 0px 0px 10px 0px;
         background-size: cover;
         border-radius: 6px;
+        width: 100%;
         height: 200px;
         padding: 20px;
-        min-width: 300px;
-        max-width: 300px;
+        
     }
     .date {
         width: 40px;
