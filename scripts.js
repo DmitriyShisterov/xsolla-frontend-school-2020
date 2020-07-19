@@ -24,9 +24,7 @@ function evling(params) {
         if (eventsWrap.childElementCount != 0) {
             eventsWrap.innerHTML = '';
         }
-
         if (x.length > 0) {
-
             for (let i = 0; i < x.length; i++) {
                 let name = x[i].name;
                 let fullDate = x[i].date;
@@ -64,11 +62,9 @@ function evling(params) {
             error.style.borderRadius = '6px';
             error.innerHTML = 'По указанным параметрам событий не найдено. <br>Попробуйте повторить поиск с другими параметрами.';
             eventsWrap.append(error);
-
-
-
         }
     }
+
     eventsWrap.onclick = function (event) {
         let bk = event.target.closest('.bookmark'); // (1)
         if (!bk) return; // (2)
@@ -79,7 +75,6 @@ function evling(params) {
             bk.classList.toggle('checked', false);
         }
     };
-
 
     let filter = {
         city: undefined,
@@ -96,7 +91,6 @@ function evling(params) {
             } else if (event.target.className === 'month') {
                 filter.month = select.value;
             }
-
             if (filter.city && filter.month) {
                 sortEvl = [];
                 let found = 0;
