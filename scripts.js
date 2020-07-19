@@ -17,40 +17,55 @@ function evling(params) {
         .catch(function () {
             //error
         });
+
     /*render*/
     function render(x) {
         let eventsWrap = document.querySelector('#eventsWrap');
         if (eventsWrap.childElementCount != 0) {
             eventsWrap.innerHTML = '';
         }
-        for (let i = 0; i < x.length; i++) {
-            let name = x[i].name;
-            let fullDate = x[i].date;
-            let img = x[i].image;
 
-            let event = document.createElement('div'); // создаем событие
-            event.className = 'event';
-            event.style.backgroundImage = `url(${img})`;
-            console.log()
+        if (x.length > 0) {
 
-            let dateBookmark = document.createElement('div');// создаем date&bookmark
-            dateBookmark.className = 'dateBookmark';
+            for (let i = 0; i < x.length; i++) {
+                let name = x[i].name;
+                let fullDate = x[i].date;
+                let img = x[i].image;
 
-            let dates = document.createElement('div');// создаем  date
-            dates.className = 'date';
-            date = fullDate.slice(0, 2);
-            dates.innerText = date;
+                let event = document.createElement('div'); // создаем событие
+                event.className = 'event';
+                event.style.backgroundImage = `url(${img})`;
+                console.log()
 
-            let bookmark = document.createElement('div');// создаем bookmark
-            bookmark.className = 'bookmark';
+                let dateBookmark = document.createElement('div');// создаем date&bookmark
+                dateBookmark.className = 'dateBookmark';
 
-            let eventTitle = document.createElement('div');// создаем eventTitle
-            eventTitle.className = 'eventTitle';
-            eventTitle.innerText = name;
+                let dates = document.createElement('div');// создаем  date
+                dates.className = 'date';
+                date = fullDate.slice(0, 2);
+                dates.innerText = date;
 
-            dateBookmark.append(dates, bookmark);// добавляем к date&bookmark(date,bookmark)
-            event.append(dateBookmark, eventTitle);// добавляем к event(datebookmark, eventTitle)*/
-            eventsWrap.append(event);
+                let bookmark = document.createElement('div');// создаем bookmark
+                bookmark.className = 'bookmark';
+
+                let eventTitle = document.createElement('div');// создаем eventTitle
+                eventTitle.className = 'eventTitle';
+                eventTitle.innerText = name;
+
+                dateBookmark.append(dates, bookmark);// добавляем к date&bookmark(date,bookmark)
+                event.append(dateBookmark, eventTitle);// добавляем к event(datebookmark, eventTitle)*/
+                eventsWrap.append(event);
+            }
+        } else {
+            let error = document.createElement('div'); // создаем событие
+            error.className = 'event', 'error';
+            error.style.border = '1px solid #444';
+            error.style.borderRadius = '6px';
+            error.innerText = 'По указанным параметрам событий не найдено. Попробуйте повторить поиск с другими параметрами.';
+            eventsWrap.append(error);
+
+
+
         }
     }
     eventsWrap.onclick = function (event) {
@@ -90,9 +105,21 @@ function evling(params) {
                         sortEvl.push(evt);
                         found++;
                     }
+                    if (filter.city === 'all' && month === filter.month) {
+                        sortEvl.push(evt);
+                        found++;
+                    }
+                    if (filter.city === evt.city && filter.month === 'all') {
+                        sortEvl.push(evt);
+                        found++;
+                    }
+                    if (filter.city === 'all' && filter.month === 'all') {
+                        sortEvl.push(evt);
+                        found++;
+                    }
                 })
                 if (found === 0) {
-                    alert(message);
+                    sortEvl = [];
                 }
                 render(sortEvl);
                 console.log(sortEvl);
