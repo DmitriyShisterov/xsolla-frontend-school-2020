@@ -3,7 +3,7 @@ body {
     font-family: Arial;
 }
 .wrapper{
-    margin: 0 auto;
+    margin: 0 auto;width: 100%;
 }
 .container-large {
     padding: 100px 100px 80px 100px;
@@ -59,9 +59,9 @@ input:focus, select:focus, fieldset:focus {
 }
 .eventsWrap {
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     flex-wrap: wrap;
-    max-width: 1440px;
+    /* max-width: 1440px; */
 }
 .event {
     background-size: cover;
@@ -170,8 +170,9 @@ input:focus, select:focus, fieldset:focus {
         margin: 0px 0px 10px 0px;
         background-size: cover;
         border-radius: 6px;
-        height: 300px;
-        padding: 20px;
+        /* height: 300px; */
+        /* padding: 20px; */
         margin: 10px;
     }
   }
+
