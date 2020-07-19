@@ -138,5 +138,3 @@ function evling(params) {
     })
 };
 evling();
-
-
