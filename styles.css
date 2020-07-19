@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 
 body {
     font-family: Arial;
@@ -7,7 +14,8 @@ body {
 }
 .container-large {
     padding: 100px 100px 80px 100px;
-    box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.12);
+            box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.12);
     border-radius: 16px;
     width: 100%;
 }
@@ -18,13 +26,21 @@ body {
     line-height: 66px;
 }
 .inputsBoxWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin: 40px 0;
 }
 .inputBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .inputBox > label {
     font-size:24px;
@@ -32,6 +48,7 @@ body {
 }
 select {
     background-color: #fff;
+    background-image: -o-linear-gradient(45deg, transparent 50%, #bdbdbd 50%),-o-linear-gradient(315deg, #bdbdbd 50%, transparent 50%),-o-linear-gradient(left, #bdbdbd00, #bdbdbd00);
     background-image: linear-gradient(45deg, transparent 50%, #bdbdbd 50%),linear-gradient(135deg, #bdbdbd 50%, transparent 50%),linear-gradient(to right, #bdbdbd00, #bdbdbd00);
     background-position: calc(100% - 20px) calc(1em + 2px),calc(100% - 15px) calc(1em + 2px),calc(100% - 2.5em) 0.5em;
     background-size: 0px !important;
@@ -45,7 +62,8 @@ input:focus, select:focus, fieldset:focus {
 .inputBox select{
     width: 200px;
     height: 50px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 6px;
     border: 1px solid #444;
     font-size: 24px;
@@ -58,9 +76,12 @@ input:focus, select:focus, fieldset:focus {
     margin-left: 35px;
 }
 .eventsWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     /* width: 100%; */
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     /* max-width: 1440px; */
 }
 .event {
@@ -68,10 +89,18 @@ input:focus, select:focus, fieldset:focus {
     border-radius: 6px;
     height: 400px;
     width: calc(50% - 20px);
+    width: -webkit-calc(50% - 20px);
     padding: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin: 10px;
 }
 
@@ -79,7 +108,8 @@ input:focus, select:focus, fieldset:focus {
     width: 80px;
     height: 80px;
     border: 2px solid #FFFFFF;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 6px;
     font-style: normal;
     font-weight: normal;
@@ -89,8 +119,12 @@ input:focus, select:focus, fieldset:focus {
     vertical-align: middle;
 }
 .dateBookmark {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 .bookmark{
     height: 18px;
@@ -108,7 +142,8 @@ input:focus, select:focus, fieldset:focus {
     font-size: 48px;
     line-height: 66px;
     color: #FFFFFF;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -116,14 +151,23 @@ input:focus, select:focus, fieldset:focus {
 @media (max-width: 480px) {
     .container-large {
         padding: 50px 0px 40px 0px;
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
     .inputBox {
-        align-items: flex-start;
-        flex-direction: column;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .inputsBoxWrap {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         margin: 30px 0 50px 0;
     }
     .inputsBoxWrap div:last-child {
@@ -141,7 +185,10 @@ input:focus, select:focus, fieldset:focus {
         height: 40px;
     }
     .eventsWrap {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .event {
         margin: 0px 0px 10px 0px;
@@ -166,13 +213,19 @@ input:focus, select:focus, fieldset:focus {
   }
 
   @media (min-width: 768px) and (max-width:1024px){
+    .container-large {
+        padding: 100px 40px 80px 40px;
+    }
     .event {
         margin: 0px 0px 10px 0px;
         background-size: cover;
         border-radius: 6px;
-        /* height: 300px; */
-        /* padding: 20px; */
         margin: 10px;
     }
+    .inputBox {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+        flex-direction: column;
+    }
   }
-
