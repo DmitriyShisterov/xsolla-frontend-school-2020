@@ -58,10 +58,11 @@ function evling(params) {
             }
         } else {
             let error = document.createElement('div'); // создаем событие
-            error.className = 'event', 'error';
+            error.className = 'event';
+            error.classList.add('error');
             error.style.border = '1px solid #444';
             error.style.borderRadius = '6px';
-            error.innerText = 'По указанным параметрам событий не найдено. Попробуйте повторить поиск с другими параметрами.';
+            error.innerHTML = 'По указанным параметрам событий не найдено. <br>Попробуйте повторить поиск с другими параметрами.';
             eventsWrap.append(error);
 
 

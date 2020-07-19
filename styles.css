@@ -143,6 +143,10 @@ input:focus, select:focus, fieldset:focus {
     white-space: nowrap;
     overflow: hidden;
 }
+.event.error {
+    font-size: 24px;
+    height: auto;
+}
 
 @media (max-width: 567px) {
     .wrapper {
@@ -205,6 +209,9 @@ input:focus, select:focus, fieldset:focus {
         line-height: 33px;
         white-space: break-spaces;
     }
+    .event.error {
+        font-size: 20px;
+    }
     
   }
 
@@ -226,6 +233,10 @@ input:focus, select:focus, fieldset:focus {
         background-size: cover;
         border-radius: 6px;
         margin: 10px;
+    }
+    .event.error {
+        font-size: 22px;
+        height: auto;
     }
     
   }
