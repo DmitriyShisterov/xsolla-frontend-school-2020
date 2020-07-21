@@ -254,7 +254,11 @@ input:focus, select:focus, fieldset:focus {
     .event.error {
         font-size: 22px;
         height: auto;
-    }   
+    } 
+    .selectCaret {
+    width: 35px;
+    height: 35px;
+  }  
   }
  
 
