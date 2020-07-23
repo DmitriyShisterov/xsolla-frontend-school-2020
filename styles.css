@@ -256,8 +256,8 @@ input:focus, select:focus, fieldset:focus {
         height: auto;
     } 
     .selectCaret {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 20px;
   }  
   }
  
