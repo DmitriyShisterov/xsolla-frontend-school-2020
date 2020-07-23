@@ -42,8 +42,7 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    justify-content: space-around;
-    /* flex: 1; */
+    /* justify-content: space-around; */
 }
 .inputBox > label {
     font-size:24px;
@@ -239,9 +238,6 @@ input:focus, select:focus, fieldset:focus {
     .wrapper {
         padding: 100px 40px 80px 40px;
     } 
-    .inputBox select {
-        width: 100%;
-        }
     .inputsBoxWrap {
         width: 100%;
         }
@@ -256,7 +252,6 @@ input:focus, select:focus, fieldset:focus {
         height: auto;
     } 
     .selectCaret {
-    width: 40px;
     height: 20px;
   }  
   div.inputBox:nth-child(2) {
