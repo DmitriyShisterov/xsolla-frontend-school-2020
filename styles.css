@@ -170,7 +170,7 @@ input:focus, select:focus, fieldset:focus {
     height: auto;
 }
 
-@media (max-width: 567px) {
+@media (max-width: 570px) {
     .wrapper {
         padding: 60px 20px 40px 20px;
         -webkit-box-shadow: none;
@@ -245,7 +245,7 @@ input:focus, select:focus, fieldset:focus {
     }
   }
 
-  @media (min-width: 567px) and (max-width:1024px){
+  @media (min-width: 570px) and (max-width:1024px){
     .wrapper {
         padding: 100px 40px 80px 40px;
     } 
