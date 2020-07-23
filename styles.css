@@ -77,10 +77,14 @@ input:focus, select:focus, fieldset:focus {
     background-color: transparent;
 }
 .selectCaret {
+    display: flex;
+    align-items: center;
+  }
+.selectCaret img {
     width: 20px;
     height: 20px;
-    background-image: url(src/down-arrow.svg);
-    background-size: cover;
+    display: flex;
+    align-items: center;
     left: -35px;
     position: relative;
     z-index: 0;
